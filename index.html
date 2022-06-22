@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>BINGO</title>
+</head>
+
+<body>
+
+    <h1><b>B I N G O </b></h1>
+    
+    <h2>BOA SORTE!!!</h2>
+    
+    <div>  
+    <p id="numeros">Numeros sorteados</p>
+    </div>
+    
+    <div>
+        <button id="botao">SORTEAR</button>
+    </div>
+
+    <div class="cartela_bingo">
+        <center>
+            <table>
+                <tr>
+                    <th>B</th>
+                    <th>I</th>
+                    <th>N</th>
+                    <th>G</th>
+                    <th>O</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span>11</span>
+                    </td>
+                    <td>
+                        <span>20</span>
+                    </td>
+                    <td>
+                        <span>45</span>
+                    </td>
+                    <td>
+                        <span>52</span>
+                    </td>
+                    <td>
+                        <span>66</span>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <span>13</span>
+                    </td>
+                    <td>
+                        <sapm>17</sapm>
+                    </td>
+                    <td>
+                        <span>44</span>
+                    </td>
+                    <td>
+                        <span>50</span>
+                    </td>
+                    <td>
+                        <span>72</span>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <span>12</span>
+                    </td>
+                    <td>
+                        <span>26</span>
+                    </td>
+
+                    <td class="meio">
+                        <i class="fa fa-hand-peace-o" aria-hidden="true"></i>
+                    </td>
+
+                    <td>
+                        <span>48</span>
+                    </td>
+                    <td>
+                        <span>67</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span>5</span>
+                    </td>
+                    <td>
+                        <span>19</span>
+                    </td>
+                    <td>
+                        <span>32</span>
+                    </td>
+                    <td>
+                        <span>53</span>
+                    </td>
+                    <td>
+                        <span>69</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span>10</span>
+                    </td>
+                    <td>
+                        <span>27</span>
+                    </td>
+                    <td>
+                        <span>33</span>
+                    </td>
+                    <td>
+                        <span>47</span>
+                    </td>
+                    <td>
+                        <span>62</span>
+                    </td>
+                </tr>
+            </table>
+        </center>
+
+
+        <script>
+            var cartela = document.querySelector('p#numeros')
+            var NumeroSorteado = cartela.innerHTML
+            var sortidos
+                document.getElementById("botao").onclick = gerarAleatorio = () => {
+                sortidos = Math.floor(Math.random() * 75 + 1)
+                cartela.innerHTML = sortidos
+
+            var pedraSorteada = document.querySelectorAll('span'), i;
+                for (i = 0; i < pedraSorteada.length; ++i) {
+                    if (pedraSorteada[i].innerText == sortidos) {
+                        pedraSorteada[i].style.color = "red";
+                    }
+                    const numeroLimite = 75;
+                    let lista = [];
+                    for (let i = 0; i < numeroLimite; i++) {
+                        lista[i] = i + 1;
+                    } console.log(lista);
+
+                    let sorteio;
+                    let numeroAleatorio;
+                    for (let i = lista.length; i;) {
+                        sorteio = Math.random() * i-- | 0;
+                        numeroAleatorio = lista[sorteio];
+
+                        lista[sorteio] = lista[i];
+
+                        lista[i] = numeroAleatorio;
+                    } console.log(lista);
+                }
+            }
+
+        </script>
+</body>
+
+</html>
